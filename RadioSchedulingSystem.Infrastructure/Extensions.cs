@@ -15,6 +15,11 @@ public static class Extensions
             options.UseNpgsql(configuration.GetConnectionString("RadioSystemDb")));
         services.AddScoped<IShowRepository, ShowRepository>();
         
+        services.AddMediatR(mediatRServiceConfiguration =>
+        {
+            mediatRServiceConfiguration.RegisterServicesFromAssembly(typeof(Extensions).Assembly);
+        });
+        
         return services;
     }
 }

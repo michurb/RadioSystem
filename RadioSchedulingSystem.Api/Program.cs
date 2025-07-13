@@ -1,4 +1,5 @@
 using System.Reflection;
+using RadioSchedulingSystem.Application;
 using RadioSchedulingSystem.Application.Commands;
 using RadioSchedulingSystem.Infrastructure;
 using RadioSchedulingSystem.Infrastructure.DAL;
@@ -8,13 +9,9 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Services.AddMediatR(configuration =>
-{
-    configuration.RegisterServicesFromAssembly(typeof(CreateShow).Assembly);
-    configuration.RegisterServicesFromAssembly(typeof(Extensions).Assembly);
-});
 
 builder.Services.AddInfrastructure(builder.Configuration);
+builder.Services.AddApplication();
 
 var app = builder.Build();
 
