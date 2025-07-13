@@ -1,0 +1,7 @@
+﻿services:
+  radioschedulingsystem:
+    image: radioschedulingsystem
+    build:
+      context: .
+      dockerfile: RadioSchedulingSystem/Dockerfile
+

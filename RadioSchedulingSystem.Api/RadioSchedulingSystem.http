@@ -1,0 +1,6 @@
+@RadioSchedulingSystem_HostAddress = http://localhost:5111
+
+GET {{RadioSchedulingSystem_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
