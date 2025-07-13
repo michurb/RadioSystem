@@ -13,6 +13,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RadioSchedulingSystem.Appli
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RadioSchedulingSystem.Infrastructure", "RadioSchedulingSystem.Infrastructure\RadioSchedulingSystem.Infrastructure.csproj", "{351DA877-73C5-4772-97D8-105A90E6CFC3}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{7BE8F2C2-8978-4B47-9356-B320412CE6B8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{2E3A1A0B-272B-48A5-A4CE-6AB7555F41EB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,5 +39,11 @@ Global
 		{351DA877-73C5-4772-97D8-105A90E6CFC3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{351DA877-73C5-4772-97D8-105A90E6CFC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{351DA877-73C5-4772-97D8-105A90E6CFC3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{80E620EB-6E5E-440E-A73B-2D559A431754} = {7BE8F2C2-8978-4B47-9356-B320412CE6B8}
+		{7FFE1171-3EAF-4538-AB3F-7C6D7E141C45} = {7BE8F2C2-8978-4B47-9356-B320412CE6B8}
+		{93014260-63DA-45B0-A0B7-E837088B6BAA} = {7BE8F2C2-8978-4B47-9356-B320412CE6B8}
+		{351DA877-73C5-4772-97D8-105A90E6CFC3} = {7BE8F2C2-8978-4B47-9356-B320412CE6B8}
 	EndGlobalSection
 EndGlobal
