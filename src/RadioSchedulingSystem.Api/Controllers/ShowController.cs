@@ -1,6 +1,8 @@
+using FluentValidation;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using RadioSchedulingSystem.Application.Commands;
+using RadioSchedulingSystem.Application.DTO;
 using RadioSchedulingSystem.Application.Exceptions;
 using RadioSchedulingSystem.Application.Queries;
 
@@ -11,10 +13,12 @@ namespace RadioSchedulingSystem.Api.Controllers;
 public class ShowController : ControllerBase
 {
     private readonly IMediator _mediator;
+    private readonly IValidator<CreateShowDto> _validator;
 
-    public ShowController(IMediator mediator)
+    public ShowController(IMediator mediator, IValidator<CreateShowDto> validator)
     {
         _mediator = mediator;
+        _validator = validator;
     }
     
     [HttpGet("{id:guid}")]
@@ -48,6 +52,12 @@ public class ShowController : ControllerBase
     [HttpPost]
     public async Task<IActionResult> CreateShow(CreateShow command)
     {
+        var validator = _validator.Validate(command.dto);
+        if (!validator.IsValid)
+        {
+            return BadRequest(validator.Errors);
+        }
+        
         try
         {
             var showId = await _mediator.Send(command);
