@@ -2,8 +2,8 @@
 
 public class CreateShowDto
 {
-    public string Title { get; set; }
-    public string Presenter { get; set; }
+    public required string Title { get; set; }
+    public required string Presenter { get; set; }
     public DateTime StartTime { get; set; }
     public int DurationMinutes { get; set; }
 }

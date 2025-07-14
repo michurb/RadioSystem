@@ -11,7 +11,7 @@ public class ErrorLoggingTests
     public void LogError_WritesMessageToFile()
     {
         // Arrange
-        var logger = new ErrorFileLogger("TestCategory");
+        var logger = new ErrorFileLogger();
         if (File.Exists(_logFilePath)) File.Delete(_logFilePath);
 
         var logMessage = "Test error occurred";

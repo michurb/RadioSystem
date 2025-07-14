@@ -17,6 +17,12 @@ public class GetShowByIdHandler : IRequestHandler<GetShowById, ShowDto>
     public async Task<ShowDto> Handle(GetShowById request, CancellationToken cancellationToken)
     {
         var show = await _showRepository.GetByIdAsync(request.id);
+        
+        if (show == null)
+        {
+            throw new KeyNotFoundException($"Show with ID {request.id} not found.");
+        }
+        
         return show.AsDto();
     }
 }

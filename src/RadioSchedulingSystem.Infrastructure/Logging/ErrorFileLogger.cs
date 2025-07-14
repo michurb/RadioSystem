@@ -6,14 +6,7 @@ namespace RadioSchedulingSystem.Infrastructure.Logging;
 public class ErrorFileLogger : ILogger
 {
     private const string LogFilePath = "Logs/error_logs.txt";
-
-    public ErrorFileLogger(string categoryName)
-    {
-        CategoryName = categoryName;
-    }
-
-    public string CategoryName { get; }
-
+    
     public IDisposable? BeginScope<TState>(TState state)
     {
         return null;
