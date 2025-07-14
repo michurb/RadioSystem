@@ -13,6 +13,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RadioSchedulingSystem.Domai
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RadioSchedulingSystem.Infrastructure", "src\RadioSchedulingSystem.Infrastructure\RadioSchedulingSystem.Infrastructure.csproj", "{B20B5963-05AD-4B76-B821-FFD88AFC1C6F}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{EFA4C558-DB73-4EA5-BE15-477807177B0D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RadioSchedulingSystem.Tests", "tests\RadioSchedulingSystem.Tests\RadioSchedulingSystem.Tests.csproj", "{97374C28-10EE-4073-AF87-4DC6DFA682EB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -38,11 +42,16 @@ Global
 		{B20B5963-05AD-4B76-B821-FFD88AFC1C6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B20B5963-05AD-4B76-B821-FFD88AFC1C6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B20B5963-05AD-4B76-B821-FFD88AFC1C6F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{97374C28-10EE-4073-AF87-4DC6DFA682EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{97374C28-10EE-4073-AF87-4DC6DFA682EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{97374C28-10EE-4073-AF87-4DC6DFA682EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{97374C28-10EE-4073-AF87-4DC6DFA682EB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{3AA43CD4-79A1-485D-BD39-FAF200CC9099} = {DF59D005-606E-4940-BD69-1C741F43940E}
 		{97AA174F-520D-4910-A837-D226360F7D78} = {DF59D005-606E-4940-BD69-1C741F43940E}
 		{9900BDB5-6F04-406A-BBD4-C886A2F7FFD9} = {DF59D005-606E-4940-BD69-1C741F43940E}
 		{B20B5963-05AD-4B76-B821-FFD88AFC1C6F} = {DF59D005-606E-4940-BD69-1C741F43940E}
+		{97374C28-10EE-4073-AF87-4DC6DFA682EB} = {EFA4C558-DB73-4EA5-BE15-477807177B0D}
 	EndGlobalSection
 EndGlobal
