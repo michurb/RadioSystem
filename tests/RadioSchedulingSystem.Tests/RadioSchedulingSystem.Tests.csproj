@@ -24,7 +24,7 @@
     <ItemGroup>
         <ProjectReference Include="..\..\src\RadioSchedulingSystem.Application\RadioSchedulingSystem.Application.csproj"/>
         <ProjectReference Include="..\..\src\RadioSchedulingSystem.Domain\RadioSchedulingSystem.Domain.csproj"/>
-        <ProjectReference Include="..\..\src\RadioSchedulingSystem.Infrastructure\RadioSchedulingSystem.Infrastructure.csproj" />
+        <ProjectReference Include="..\..\src\RadioSchedulingSystem.Infrastructure\RadioSchedulingSystem.Infrastructure.csproj"/>
     </ItemGroup>
 
 </Project>

@@ -12,9 +12,9 @@ namespace RadioSchedulingSystem.Api.Controllers;
 [Route("api/shows")]
 public class ShowController : ControllerBase
 {
+    private readonly ILogger<ShowController> _logger;
     private readonly IMediator _mediator;
     private readonly IValidator<CreateShowDto> _validator;
-    private readonly ILogger<ShowController> _logger;
 
     public ShowController(IMediator mediator, IValidator<CreateShowDto> validator, ILogger<ShowController> logger)
     {
@@ -41,6 +41,18 @@ public class ShowController : ControllerBase
         var result = await _mediator.Send(query);
 
         if (!result.Any()) return NotFound();
+
+        return Ok(result);
+    }
+
+    [HttpGet("daily-report")]
+    public async Task<IActionResult> GetDailyReport([FromQuery] DateTime date)
+    {
+        var utcDate = DateTime.SpecifyKind(date.Date, DateTimeKind.Utc);
+
+        var result = await _mediator.Send(new GetDailyReport(utcDate));
+
+        if (!result.Shows.Any()) return NotFound();
 
         return Ok(result);
     }

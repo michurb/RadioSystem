@@ -6,16 +6,13 @@ namespace RadioSchedulingSystem.Tests;
 public class ErrorLoggingTests
 {
     private readonly string _logFilePath = "Logs/error_logs.txt";
-    
+
     [Fact]
     public void LogError_WritesMessageToFile()
     {
         // Arrange
         var logger = new ErrorFileLogger("TestCategory");
-        if (File.Exists(_logFilePath))
-        {
-            File.Delete(_logFilePath);
-        }
+        if (File.Exists(_logFilePath)) File.Delete(_logFilePath);
 
         var logMessage = "Test error occurred";
 

@@ -5,7 +5,6 @@ namespace RadioSchedulingSystem.Infrastructure.Logging;
 
 public class ErrorFileLogger : ILogger
 {
-    public string CategoryName { get; }
     private const string LogFilePath = "Logs/error_logs.txt";
 
     public ErrorFileLogger(string categoryName)
@@ -13,9 +12,17 @@ public class ErrorFileLogger : ILogger
         CategoryName = categoryName;
     }
 
-    public IDisposable? BeginScope<TState>(TState state) => null;
+    public string CategoryName { get; }
 
-    public bool IsEnabled(LogLevel logLevel) => logLevel == LogLevel.Error;
+    public IDisposable? BeginScope<TState>(TState state)
+    {
+        return null;
+    }
+
+    public bool IsEnabled(LogLevel logLevel)
+    {
+        return logLevel == LogLevel.Error;
+    }
 
     public void Log<TState>(LogLevel logLevel, EventId eventId,
         TState state, Exception? exception, Func<TState, Exception?, string> formatter)
@@ -25,11 +32,8 @@ public class ErrorFileLogger : ILogger
         try
         {
             var directory = Path.GetDirectoryName(LogFilePath);
-            if (!string.IsNullOrEmpty(directory) && !Directory.Exists(directory))
-            {
-                Directory.CreateDirectory(directory);
-            }
-            
+            if (!string.IsNullOrEmpty(directory) && !Directory.Exists(directory)) Directory.CreateDirectory(directory);
+
             var timestamp = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
             var message = formatter(state, exception);
             var entry = $"[{timestamp}] ERROR: {message} ;{Environment.NewLine}";

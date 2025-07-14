@@ -9,5 +9,7 @@ public class ErrorFileLoggerProvider : ILoggerProvider
         return new ErrorFileLogger(categoryName);
     }
 
-    public void Dispose() { }
+    public void Dispose()
+    {
+    }
 }
