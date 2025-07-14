@@ -13,6 +13,7 @@ public class GetShowByIdHandler : IRequestHandler<GetShowById, ShowDto>
     {
         _showRepository = showRepository;
     }
+
     public async Task<ShowDto> Handle(GetShowById request, CancellationToken cancellationToken)
     {
         var show = await _showRepository.GetByIdAsync(request.id);

@@ -11,6 +11,7 @@ public sealed class ShowCreatedNotificationHandler : INotificationHandler<ShowCr
     {
         _channels = notifications ?? throw new ArgumentNullException(nameof(notifications));
     }
+
     public async Task Handle(ShowCreatedNotification notification, CancellationToken cancellationToken)
     {
         var body =
@@ -18,9 +19,6 @@ public sealed class ShowCreatedNotificationHandler : INotificationHandler<ShowCr
             $" o {notification.Show.StartTime:yyyy-MM-dd HH:mm}" +
             $"prowadzona przez {notification.Show.Presenter}.";
 
-        foreach (var channel in _channels)
-        {
-            await channel.NotifyAsync(body, cancellationToken);
-        }
+        foreach (var channel in _channels) await channel.NotifyAsync(body, cancellationToken);
     }
 }

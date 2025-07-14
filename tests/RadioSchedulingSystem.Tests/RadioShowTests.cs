@@ -8,10 +8,12 @@ using RadioSchedulingSystem.Domain.Entities;
 using RadioSchedulingSystem.Domain.Interfaces;
 
 namespace RadioSchedulingSystem.Tests;
+
 public class RadioShowTests
 {
-    private readonly Mock<IShowRepository> _mockRepo = new();
     private readonly Mock<IMediator> _mockMediator = new();
+    private readonly Mock<IShowRepository> _mockRepo = new();
+
     [Fact]
     public async Task Handle_ShouldAddShow_WhenNoOverlapExists()
     {
@@ -39,13 +41,12 @@ public class RadioShowTests
 
         // Assert
         Assert.NotEqual(Guid.Empty, result);
-        mockRepo.Verify(repo => repo.AddAsync(It.Is<Show>(
-            s => s.Title == dto.Title &&
-                 s.Presenter == dto.Presenter &&
-                 s.StartTime == dto.StartTime &&
-                 s.Duration == dto.DurationMinutes)), Times.Once);
+        mockRepo.Verify(repo => repo.AddAsync(It.Is<Show>(s => s.Title == dto.Title &&
+                                                               s.Presenter == dto.Presenter &&
+                                                               s.StartTime == dto.StartTime &&
+                                                               s.Duration == dto.DurationMinutes)), Times.Once);
     }
-    
+
     [Fact]
     public async Task Handle_ShouldThrowShowConflictException_WhenShowOverlaps()
     {

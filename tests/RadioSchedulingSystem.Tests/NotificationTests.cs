@@ -15,7 +15,7 @@ public class NotificationTests
     public async Task CreatingShow_PublishesNotification()
     {
         // Arrange
-        var repo   = new Mock<IShowRepository>();
+        var repo = new Mock<IShowRepository>();
         repo.Setup(r => r.GetShowsByDateAsync(It.IsAny<DateTime>()))
             .ReturnsAsync(Array.Empty<Show>());
 

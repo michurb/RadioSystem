@@ -6,7 +6,8 @@ namespace RadioSchedulingSystem.Infrastructure.DAL.Handlers;
 public static class Extensions
 {
     public static ShowDto AsDto(this Show show)
-    => new()
+    {
+        return new ShowDto
         {
             Id = show.Id,
             Title = show.Title,
@@ -15,3 +16,4 @@ public static class Extensions
             Duration = show.Duration
         };
     }
+}

@@ -8,8 +8,8 @@ namespace RadioSchedulingSystem.Application.Commands.Handlers;
 
 public sealed class CreateShowHandler : IRequestHandler<CreateShow, Guid>
 {
-    private readonly IShowRepository _showRepository;
     private readonly IMediator _mediator;
+    private readonly IShowRepository _showRepository;
 
     public CreateShowHandler(IShowRepository showRepository, IMediator mediator)
     {
@@ -41,7 +41,7 @@ public sealed class CreateShowHandler : IRequestHandler<CreateShow, Guid>
 
         await _showRepository.AddAsync(show);
         await _mediator.Publish(new ShowCreatedNotification(show), cancellationToken);
-        
+
         return show.Id;
     }
 }

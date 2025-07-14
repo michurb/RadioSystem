@@ -10,10 +10,10 @@ public static class Extensions
     public static IServiceCollection AddApplication(this IServiceCollection services)
     {
         services.AddMediatR(mediatRServiceConfiguration =>
-        {
-            mediatRServiceConfiguration.RegisterServicesFromAssembly(typeof(Extensions).Assembly);
-        })
-        .AddScoped<IValidator<CreateShowDto>, CreateShowValidator>();
+            {
+                mediatRServiceConfiguration.RegisterServicesFromAssembly(typeof(Extensions).Assembly);
+            })
+            .AddScoped<IValidator<CreateShowDto>, CreateShowValidator>();
         return services;
     }
 }

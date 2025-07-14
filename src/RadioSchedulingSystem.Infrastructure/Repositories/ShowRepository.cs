@@ -13,6 +13,7 @@ public class ShowRepository : IShowRepository
     {
         _context = context ?? throw new ArgumentNullException(nameof(context));
     }
+
     public async Task AddAsync(Show show)
     {
         _context.Shows.Add(show);

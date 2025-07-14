@@ -1,6 +1,5 @@
 ﻿using MediatR;
 using RadioSchedulingSystem.Application.DTO;
-using RadioSchedulingSystem.Domain.Entities;
 
 namespace RadioSchedulingSystem.Application.Queries;
 
