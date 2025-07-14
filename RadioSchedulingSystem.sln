@@ -1,21 +1,19 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RadioSchedulingSystem.Api", "RadioSchedulingSystem.Api\RadioSchedulingSystem.Api.csproj", "{80E620EB-6E5E-440E-A73B-2D559A431754}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{EEF4AE6C-462F-42A9-A937-AF06A491FCDC}"
 	ProjectSection(SolutionItems) = preProject
 		compose.yaml = compose.yaml
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RadioSchedulingSystem.Domain", "RadioSchedulingSystem.Domain\RadioSchedulingSystem.Domain.csproj", "{93014260-63DA-45B0-A0B7-E837088B6BAA}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{8216E247-D154-41EC-B31A-F7B7AE24BD00}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RadioSchedulingSystem.Application", "RadioSchedulingSystem.Application\RadioSchedulingSystem.Application.csproj", "{7FFE1171-3EAF-4538-AB3F-7C6D7E141C45}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RadioSchedulingSystem.Api", "src\RadioSchedulingSystem.Api\RadioSchedulingSystem.Api.csproj", "{FAF85945-C73F-4966-A16E-FA6FE8D76C60}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RadioSchedulingSystem.Infrastructure", "RadioSchedulingSystem.Infrastructure\RadioSchedulingSystem.Infrastructure.csproj", "{351DA877-73C5-4772-97D8-105A90E6CFC3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RadioSchedulingSystem.Application", "src\RadioSchedulingSystem.Application\RadioSchedulingSystem.Application.csproj", "{06959C93-1730-4475-8FE2-3D3FCA753A92}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{7BE8F2C2-8978-4B47-9356-B320412CE6B8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RadioSchedulingSystem.Domain", "src\RadioSchedulingSystem.Domain\RadioSchedulingSystem.Domain.csproj", "{9CF01492-D3E8-492E-B2D9-6335782D2782}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{2E3A1A0B-272B-48A5-A4CE-6AB7555F41EB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RadioSchedulingSystem.Infrastructure", "src\RadioSchedulingSystem.Infrastructure\RadioSchedulingSystem.Infrastructure.csproj", "{8CCF9D79-2343-4E02-8F59-6C558A54C83E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,27 +21,27 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{80E620EB-6E5E-440E-A73B-2D559A431754}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{80E620EB-6E5E-440E-A73B-2D559A431754}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{80E620EB-6E5E-440E-A73B-2D559A431754}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{80E620EB-6E5E-440E-A73B-2D559A431754}.Release|Any CPU.Build.0 = Release|Any CPU
-		{93014260-63DA-45B0-A0B7-E837088B6BAA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{93014260-63DA-45B0-A0B7-E837088B6BAA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{93014260-63DA-45B0-A0B7-E837088B6BAA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{93014260-63DA-45B0-A0B7-E837088B6BAA}.Release|Any CPU.Build.0 = Release|Any CPU
-		{7FFE1171-3EAF-4538-AB3F-7C6D7E141C45}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7FFE1171-3EAF-4538-AB3F-7C6D7E141C45}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7FFE1171-3EAF-4538-AB3F-7C6D7E141C45}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7FFE1171-3EAF-4538-AB3F-7C6D7E141C45}.Release|Any CPU.Build.0 = Release|Any CPU
-		{351DA877-73C5-4772-97D8-105A90E6CFC3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{351DA877-73C5-4772-97D8-105A90E6CFC3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{351DA877-73C5-4772-97D8-105A90E6CFC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{351DA877-73C5-4772-97D8-105A90E6CFC3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FAF85945-C73F-4966-A16E-FA6FE8D76C60}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FAF85945-C73F-4966-A16E-FA6FE8D76C60}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FAF85945-C73F-4966-A16E-FA6FE8D76C60}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FAF85945-C73F-4966-A16E-FA6FE8D76C60}.Release|Any CPU.Build.0 = Release|Any CPU
+		{06959C93-1730-4475-8FE2-3D3FCA753A92}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{06959C93-1730-4475-8FE2-3D3FCA753A92}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{06959C93-1730-4475-8FE2-3D3FCA753A92}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{06959C93-1730-4475-8FE2-3D3FCA753A92}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9CF01492-D3E8-492E-B2D9-6335782D2782}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9CF01492-D3E8-492E-B2D9-6335782D2782}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9CF01492-D3E8-492E-B2D9-6335782D2782}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9CF01492-D3E8-492E-B2D9-6335782D2782}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8CCF9D79-2343-4E02-8F59-6C558A54C83E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8CCF9D79-2343-4E02-8F59-6C558A54C83E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8CCF9D79-2343-4E02-8F59-6C558A54C83E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8CCF9D79-2343-4E02-8F59-6C558A54C83E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{80E620EB-6E5E-440E-A73B-2D559A431754} = {7BE8F2C2-8978-4B47-9356-B320412CE6B8}
-		{7FFE1171-3EAF-4538-AB3F-7C6D7E141C45} = {7BE8F2C2-8978-4B47-9356-B320412CE6B8}
-		{93014260-63DA-45B0-A0B7-E837088B6BAA} = {7BE8F2C2-8978-4B47-9356-B320412CE6B8}
-		{351DA877-73C5-4772-97D8-105A90E6CFC3} = {7BE8F2C2-8978-4B47-9356-B320412CE6B8}
+		{FAF85945-C73F-4966-A16E-FA6FE8D76C60} = {8216E247-D154-41EC-B31A-F7B7AE24BD00}
+		{06959C93-1730-4475-8FE2-3D3FCA753A92} = {8216E247-D154-41EC-B31A-F7B7AE24BD00}
+		{9CF01492-D3E8-492E-B2D9-6335782D2782} = {8216E247-D154-41EC-B31A-F7B7AE24BD00}
+		{8CCF9D79-2343-4E02-8F59-6C558A54C83E} = {8216E247-D154-41EC-B31A-F7B7AE24BD00}
 	EndGlobalSection
 EndGlobal
