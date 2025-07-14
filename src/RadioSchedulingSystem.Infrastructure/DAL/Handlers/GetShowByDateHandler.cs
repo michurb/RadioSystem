@@ -14,7 +14,7 @@ public class GetShowByDateHandler : IRequestHandler<GetShowByDate, IEnumerable<S
 
     public GetShowByDateHandler(IShowRepository showRepository)
     {
-        _showRepository = showRepository;
+        _showRepository = showRepository ?? throw new ArgumentNullException(nameof(showRepository));
     }
     
     public async Task<IEnumerable<ShowDto>> Handle(GetShowByDate request, CancellationToken cancellationToken)

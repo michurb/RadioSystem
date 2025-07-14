@@ -11,7 +11,7 @@ public class ShowRepository : IShowRepository
 
     public ShowRepository(RadioSystemDbContext context)
     {
-        _context = context;
+        _context = context ?? throw new ArgumentNullException(nameof(context));
     }
     public async Task AddAsync(Show show)
     {

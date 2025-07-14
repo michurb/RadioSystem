@@ -1,3 +1,4 @@
+using MediatR;
 using Moq;
 using RadioSchedulingSystem.Application.Commands;
 using RadioSchedulingSystem.Application.Commands.Handlers;
@@ -9,16 +10,19 @@ using RadioSchedulingSystem.Domain.Interfaces;
 namespace RadioSchedulingSystem.Tests;
 public class RadioShowTests
 {
+    private readonly Mock<IShowRepository> _mockRepo = new();
+    private readonly Mock<IMediator> _mockMediator = new();
     [Fact]
     public async Task Handle_ShouldAddShow_WhenNoOverlapExists()
     {
         // Arrange
         var mockRepo = new Mock<IShowRepository>();
+        var mockMediator = new Mock<IMediator>();
 
         mockRepo.Setup(repo => repo.GetShowsByDateAsync(It.IsAny<DateTime>()))
             .ReturnsAsync(new List<Show>());
 
-        var handler = new CreateShowHandler(mockRepo.Object);
+        var handler = new CreateShowHandler(mockRepo.Object, mockMediator.Object);
 
         var dto = new CreateShowDto
         {
@@ -55,12 +59,10 @@ public class RadioShowTests
             Duration = 60
         };
 
-        var mockRepo = new Mock<IShowRepository>();
-
-        mockRepo.Setup(repo => repo.GetShowsByDateAsync(It.IsAny<DateTime>()))
+        _mockRepo.Setup(repo => repo.GetShowsByDateAsync(It.IsAny<DateTime>()))
             .ReturnsAsync(new List<Show> { existingShow });
 
-        var handler = new CreateShowHandler(mockRepo.Object);
+        var handler = new CreateShowHandler(_mockRepo.Object, _mockMediator.Object);
 
         var overlappingDto = new CreateShowDto
         {

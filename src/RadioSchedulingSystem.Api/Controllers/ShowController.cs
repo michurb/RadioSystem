@@ -17,8 +17,8 @@ public class ShowController : ControllerBase
 
     public ShowController(IMediator mediator, IValidator<CreateShowDto> validator)
     {
-        _mediator = mediator;
-        _validator = validator;
+        _mediator = mediator ?? throw new ArgumentNullException(nameof(mediator));
+        _validator = validator ?? throw new ArgumentNullException(nameof(validator));
     }
     
     [HttpGet("{id:guid}")]
