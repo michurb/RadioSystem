@@ -1,7 +1,24 @@
 ﻿services:
-  radioschedulingsystem:
-    image: radioschedulingsystem
+  api:
     build:
       context: .
-      dockerfile: RadioSchedulingSystem/Dockerfile
+      dockerfile: src/RadioSchedulingSystem.Api/Dockerfile
+    ports:
+      - "5000:8080"
+    depends_on:
+      - db
+    volumes:
+      - app_logs:/app/Logs
 
+  db:
+    image: postgres
+    environment:
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
+  app_logs:

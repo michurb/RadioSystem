@@ -1,23 +1,28 @@
-﻿FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS base
-USER $APP_UID
+﻿FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /app
-EXPOSE 8080
-EXPOSE 8081
 
-FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
-ARG BUILD_CONFIGURATION=Release
-WORKDIR /src
-COPY ["RadioSchedulingSystem/RadioSchedulingSystem.csproj", "RadioSchedulingSystem/"]
-RUN dotnet restore "RadioSchedulingSystem/RadioSchedulingSystem.csproj"
+COPY *.sln .
+
+COPY src/RadioSchedulingSystem.Infrastructure/*.csproj ./src/RadioSchedulingSystem.Infrastructure/
+COPY src/RadioSchedulingSystem.Api/*.csproj ./src/RadioSchedulingSystem.Api/
+COPY src/RadioSchedulingSystem.Application/*.csproj ./src/RadioSchedulingSystem.Application/
+COPY src/RadioSchedulingSystem.Domain/*.csproj ./src/RadioSchedulingSystem.Domain/
+COPY tests/RadioSchedulingSystem.Tests/*.csproj ./tests/RadioSchedulingSystem.Tests/
+
+RUN dotnet restore RadioSchedulingSystem.sln
+
 COPY . .
-WORKDIR "/src/RadioSchedulingSystem"
-RUN dotnet build "./RadioSchedulingSystem.csproj" -c $BUILD_CONFIGURATION -o /app/build
 
-FROM build AS publish
-ARG BUILD_CONFIGURATION=Release
-RUN dotnet publish "./RadioSchedulingSystem.csproj" -c $BUILD_CONFIGURATION -o /app/publish /p:UseAppHost=false
+RUN dotnet publish src/RadioSchedulingSystem.Api/RadioSchedulingSystem.Api.csproj -c Release -o out
 
-FROM base AS final
+FROM mcr.microsoft.com/dotnet/aspnet:8.0
 WORKDIR /app
-COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "RadioSchedulingSystem.dll"]
+COPY --from=build /app/out .
+
+RUN mkdir -p /app/Logs
+
+ENV ASPNETCORE_ENVIRONMENT=Production
+ENV ASPNETCORE_URLS=http://+:8080
+
+EXPOSE 8080
+ENTRYPOINT ["dotnet", "RadioSchedulingSystem.Api.dll"]
