@@ -1,4 +1,4 @@
-# System do zarządziem audycji radiowych
+# System do zarządziania audycjiami radiowymi
 
 ## Struktura projektu
 
